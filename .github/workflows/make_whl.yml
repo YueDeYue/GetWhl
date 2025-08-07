@@ -40,10 +40,10 @@ jobs:
       - name: 正在编译 ${{ matrix.python-version }} 的Whl文件
         run: |
           # 填写需要编译Whl包的Git仓库，此处以QPT为例
-          git clone https://github.com/long2ice/asyncmy
+          git clone https://github.com/long2ice/asyncmy.git
           cd asyncmy
           python -m pip install -U setuptools wheel
-          python setup.py sdist bdist_wheel
+          python -m build --wheel
         
       - name: 上传文件
         uses: actions/upload-artifact@v4
