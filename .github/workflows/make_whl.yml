@@ -30,8 +30,8 @@ jobs:
 
 #       - name: Install VS 2025
 #         run: |
-#           choco install visualstudio2019community
-#           choco install visualstudio2019-workload-nativedesktop
+#           choco install visualstudio2025community
+#           choco install visualstudio2025-workload-nativedesktop
           
 #       - name: Get specific version CMake, v3.18.4
 #         run: choco install cmake --version=3.18.4
@@ -41,6 +41,7 @@ jobs:
         run: |
           # 填写需要编译Whl包的Git仓库，此处以QPT为例
           git clone https://github.com/long2ice/asyncmy.git
+          pip install cython
           cd asyncmy
           python -m pip install -U setuptools wheel
           python -m build --wheel
